@@ -1,0 +1,1327 @@
+@base_moon_distance = 10
+
+# 40 Eridani System - home of fictional Vulcan. Trinary types K D and M - D and M excluded - Arid Planet
+
+40_eridani_system_initializer = {
+	name = "40 Eridani"
+	class = "sc_k"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 150
+	
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 160
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 200
+	}
+	asteroid_belt = { 
+		type = icy_asteroid_belt
+		radius = 210
+	}
+
+	usage = custom_empire
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "40 Eridani"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 27
+		has_ring = no
+	}
+	
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 60
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+		
+		moon = {
+			class = "pc_toxic"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 6
+			has_ring = no
+		}
+	}
+	planet = {
+		class = "pc_arid"
+		orbit_distance = 45
+		orbit_angle = { min = 90 max = 270 }
+		size = 20
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+		}
+
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+
+	}
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 8
+		has_ring = no
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 10
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 3
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 8
+		has_ring = no
+	}
+
+
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Altair System - Brightest in Aquila constellation. Unitary Type A - 16.7 ly from Sol - Continental Planet
+
+altair_system_initializer = {
+	name = "Altair"
+	class = "sc_a"
+
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 275
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 285
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 295
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 305
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 315
+	}
+
+	usage = custom_empire
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Altair"
+		class = "pc_a_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 31
+		has_ring = no
+	}
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 10
+		has_ring = no
+	}
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 10
+		has_ring = no
+	}
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 16
+		has_ring = no
+
+		moon = {
+			class = "pc_molten"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 15
+		has_ring = yes
+		change_orbit = 5
+	}
+	planet = {
+		class = "pc_toxic"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 19
+		has_ring = no
+		moon = {
+			class = "pc_barren"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 8
+		}
+	}
+	planet = {
+		name = "Triumph"
+		class = "pc_continental"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 18
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+
+		init_effect = {
+			prevent_anomaly = yes
+		}
+
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+
+		moon = {
+			name = "Companion"
+			class = "pc_barren"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 7
+		}
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 12
+		has_ring = yes
+		change_orbit = 5
+	}
+	
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 40
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Epsilon Eridani - unitary type K - 10.5 ly from Sol - continental Planet
+
+epsilon_eridani_system_initializer = {
+	name = "Epsilon Eridani"
+	class = "sc_k"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 60
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 50
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 300
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 310
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 290
+	}
+	
+	usage = custom_empire
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Epsilon Eridani"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 27
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 60
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_savannah"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 18
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+
+		moon = {
+			class = "pc_barren"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_gas_giant"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 30
+		has_ring = no
+		
+		moon = {
+			class = "pc_toxic"
+			orbit_distance = 15
+			orbit_angle = { min = 90 max = 270 }
+			size = 8
+		}
+		moon = {
+			class = "pc_barren_cold"
+			orbit_distance = 10
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_gas_giant"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 34
+		has_ring = yes
+	}
+	planet = {
+		class = "pc_gas_giant"
+		orbit_distance = 40
+		orbit_angle = { min = 90 max = 270 }
+		size = 27
+		has_ring = yes
+	}
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 10
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Helvetios System - also called 51 Pegasi - unitary type G - 50 ly from Sol - Continental Planet
+
+helvetios_system_initializer = {
+	name = "Helvetios"
+	class = "sc_g"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 185
+		asteroids_distance = 185
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 195
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 205
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 215
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 275 
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 285
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 295
+	}
+	
+	usage = custom_empire
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Helvetios"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 34
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 75
+		orbit_angle = { min = 90 max = 270 }
+		size = 32
+		has_ring = no
+		moon = {
+			class = "pc_molten"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 6
+		}
+		moon = {
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 12
+		}
+	}
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 15
+		has_ring = no
+	}
+	planet = {
+		name = "Bellerophon"
+		class = "pc_continental"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 18
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+
+		moon = {
+			name = "Icarus"
+			class = "pc_barren_cold"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 40
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 0
+		orbit_angle = { min = 90 max = 270 }
+		size = 4
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 10
+		has_ring = yes
+	}
+		
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Kapteyns Star - unitary M dwarf - 12 ly from Sol - Alpine and Arctic Planets
+
+kapteyn's_star_system_initializer = {
+	name = "Kapteyn's Star"
+	class = "sc_m"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 150
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 160
+	}
+	asteroid_belt = { 
+		type = icy_asteroid_belt
+		radius = 230
+	}
+	asteroid_belt = { 
+		type = icy_asteroid_belt
+		radius = 240
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 250
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 260
+	}
+	
+	usage = custom_empire
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Kapteyn's Star"
+		class = "pc_m_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 15
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_toxic"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_alpine"
+		orbit_distance = 55
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+
+		moon = {
+			class = "pc_barren_cold"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 8
+		}
+		moon = {
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 10
+		}
+	}
+	planet = {
+		class = "pc_arctic"
+		orbit_distance = 55
+		orbit_angle = { min = 90 max = 270 }
+		size = 22
+		has_ring = no
+		
+		moon = {
+			class = "pc_frozen"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 6
+		}
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 15
+		has_ring = no
+	}
+	planet = {
+		class = "pc_frozen"
+		orbit_distance = 70
+		orbit_angle = { min = 90 max = 270 }
+		size = 15
+		has_ring = no
+	}
+	
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Pollux - unitary giant type K in Gemini - 33.78 ly from Sol - jungle planet
+
+pollux_system_initializer = {
+	name = "Pollux"
+	class = "sc_k"
+
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 160
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 170
+		asteroids_distance = 150
+	}
+	asteroid_belt = {  
+		type = icy_asteroid_belt
+		radius = 180
+	}
+	asteroid_belt = {  
+		type = icy_asteroid_belt
+		radius = 190
+	}
+	asteroid_belt = {  
+		type = icy_asteroid_belt
+		radius = 200
+	}
+	asteroid_belt = {  
+		type = icy_asteroid_belt
+		radius = 210
+	}
+	asteroid_belt = {  
+		type = icy_asteroid_belt
+		radius = 220
+	}
+	
+	usage = custom_empire
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Pollux"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 38
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 70
+		orbit_angle = { min = 90 max = 270 }
+		size = 16
+		has_ring = no
+	}
+	planet = {
+		class = "pc_gas_giant"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 34
+		change_orbit = 5
+		has_ring = no
+		moon = {
+			class = "pc_molten"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+		moon = {
+			class = "pc_tropical"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 16
+			starting_planet = yes
+			tile_blockers = none
+			modifiers = none
+
+			init_effect = {
+				prevent_anomaly = yes
+			}
+
+			init_effect = {
+				generate_start_buildings_and_blockers = yes
+			}
+
+		}
+		moon = {
+			class = "pc_toxic"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 12
+		}
+	}
+	
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = 3
+		has_ring = no
+	}
+	planet = {
+		class = "pc_ice_asteroid"
+		orbit_distance = 10
+		orbit_angle = { min = 90 max = 270 }
+		size = 7
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 15
+		has_ring = yes
+		change_orbit = 5
+		moon = {
+			class = "pc_frozen"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_gas_giant"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 22
+		change_orbit = 8
+		has_ring = yes
+		change_orbit = 5
+		moon = {
+			class = "pc_barren_cold"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+		moon = {
+			class = "pc_frozen"
+			orbit_distance = 6
+			orbit_angle = { min = 90 max = 270 }
+			size = 8
+		}
+	}
+	planet = {
+		class = "pc_frozen"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 10
+		has_ring = no
+	}
+	planet = {
+		class = "pc_frozen"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 10
+		has_ring = no
+	}
+
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Tau Ceti - unitary type G - continental planet
+
+tau_ceti_system_initializer = {
+	name = "Tau Ceti"
+	class = "sc_g"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 210
+	}	
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 220
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 230
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 240
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 250
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 260
+	}
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 270
+	}
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 280
+	}
+	
+	usage = custom_empire
+
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Tau Ceti"
+		class = "pc_g_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 16
+		has_ring = no
+	}
+	planet = {
+		class = "pc_toxic"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 22
+		has_ring = no
+		
+		moon = {
+			class = "pc_barren"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_continental"
+		orbit_distance = 40
+		orbit_angle = { min = 90 max = 270 }
+		size = 18
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes
+		}
+		
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+
+		moon = {
+			class = "pc_barren_cold"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 40
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+		has_ring = no
+		init_effect = {
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+		moon = {
+			class = "pc_frozen"
+			orbit_distance = 10
+			orbit_angle = { min = 90 max = 270 }
+			size = 10
+		}
+		moon = {
+			class = "pc_frozen"
+			orbit_distance = 5
+			orbit_angle = { min = 90 max = 270 }
+			size = 5
+		}
+	}
+	planet = {
+		class = "pc_frozen"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 8
+		has_ring = yes
+		change_orbit = 5
+	}
+	planet = {
+		class = "pc_asteroid"
+		orbit_distance = 35
+		orbit_angle = 30
+		size = 5
+		has_ring = no
+	}
+		planet = {
+		class = "pc_asteroid"
+		orbit_distance = 10
+		orbit_angle = 90
+		size = 5
+		has_ring = no
+	}
+		planet = {
+		class = "pc_asteroid"
+		orbit_distance = 10
+		orbit_angle = 20
+		size = 5
+		has_ring = no
+	}
+		planet = {
+		class = "pc_asteroid"
+		orbit_distance = 15
+		orbit_angle = 40
+		size = 5
+		has_ring = no
+	}
+	
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Kepler-62 - 990 ly away - K type star size 26 in Lyra with 5 planets e, f are best chances
+
+kepler-62_system_initializer = {
+	name = "Kepler-62"
+	class = "sc_k"
+	
+	usage = custom_empire
+	
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Kepler-62"
+		class = "pc_k_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 25
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_molten"
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		size = 22
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = 12
+		has_ring = no
+	}
+	planet = {
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = 25
+		has_ring = no
+		moon = {
+			class = "pc_tropical"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 8
+		}
+	}
+	planet = {
+		class = "pc_arctic"
+		orbit_distance = 35
+		orbit_angle = { min = 90 max = 270 }
+		size = 22
+		has_ring = no
+		moon = {
+			class = "pc_barren_cold"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 6
+		}
+	}
+	planet = {
+		class = "pc_ocean"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = 20
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+		moon = {
+			class = "pc_arid"
+			orbit_distance = 12
+			orbit_angle = { min = 90 max = 270 }
+			size = 8
+		}
+	}
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 70
+		orbit_angle = { min = 90 max = 270 }
+		size = 7
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 5
+		has_ring = no
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
+
+### Trappist 1 - 39 ly away - small red dwarf type M size 20 with 7 terrestrial planets, b toxic, c barren, d water, e desert, f arctic g toxic h ?
+
+trappist-1_system_initializer = {
+	name = "Trappist-1"
+	class = "sc_m"
+	usage = custom_empire
+	init_effect = {
+		every_neighbor_system = {
+			set_star_flag = empire_cluster
+			every_neighbor_system = {
+				set_star_flag = empire_cluster
+			}
+		}
+		generate_home_system_resources = yes
+	}
+
+	planet = {
+		name = "Trappist-1"
+		class = "pc_m_star"
+		orbit_distance = 0
+		orbit_angle = 1
+		size = 15
+		has_ring = no
+	}
+
+	planet = {
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = 21
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 15
+		orbit_angle = { min = 90 max = 270 }
+		size = 20
+		has_ring = no
+	}
+	planet = {
+		class = "pc_ocean"
+		orbit_distance = 25
+		orbit_angle = { min = 90 max = 270 }
+		size = 15
+		has_ring = no
+	}
+	planet = {
+		class = "pc_desert"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 16
+		has_ring = no
+		starting_planet = yes
+		tile_blockers = none
+		modifiers = none
+		init_effect = {
+			prevent_anomaly = yes
+		}
+
+		init_effect = {
+			generate_start_buildings_and_blockers = yes
+		}
+	}
+	planet = {
+		class = "pc_arctic"
+		orbit_distance = 30
+		orbit_angle = { min = 90 max = 270 }
+		size = 17
+		has_ring = no
+	}
+	planet = {
+		class = "pc_toxic"
+		orbit_distance = 20
+		orbit_angle = { min = 90 max = 270 }
+		size = 18
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 14
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 70
+		orbit_angle = { min = 90 max = 270 }
+		size = 10
+		has_ring = no
+	}
+	planet = {
+		class = "pc_barren_cold"
+		orbit_distance = 50
+		orbit_angle = { min = 90 max = 270 }
+		size = 6
+		has_ring = no
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 2 }
+		hyperlane_jumps = { min = 1 max = @jumps }
+		initializer = "neighbor_t1"
+	}
+	neighbor_system = {
+		trigger = { num_guaranteed_colonies >= 1 }
+		hyperlane_jumps = { min = 1 max = @jumps }	
+		initializer = "neighbor_t1_first_colony"
+	}
+}
